@@ -12,3 +12,32 @@ body {
   left: 0;
   font-family: "Montserrat", sans-serif;
 }
+
+.success-btn {
+  background-color: #f7941d;
+  color: #fff;
+  border: 1px solid #f7941d;
+  text-decoration: none;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.success-btn:disabled {
+  background-color: #f7941d9e;
+  border: 1px solid #f7941d9e;
+}
+
+.cancel-btn {
+  background-color: #ffffff;
+  color: #f7941d;
+  border: 1px solid #f7941d;
+  text-decoration: none;
+  font: inherit;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.open {
+  display: block !important;
+}
