@@ -40,6 +40,15 @@ export class ModalComponent implements OnInit {
   onSubmit(): void {
     console.log(this.bookForm.value);
     this.closeModal();
+    this.showToast();
+  }
+
+  showToast(): void {
+    const toast = document.getElementById('toast');
+    if (toast) {
+      toast.className = 'show';
+      setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 3000);
+    }
   }
 
 }
