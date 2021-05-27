@@ -82,6 +82,8 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   getPlaces(): void {
+    this.markers = [];
+    this.map.removeObjects(this.map.getObjects());
     const places = this.platform.getPlacesService();
     places.search({
       at: this.latitude + ',' + this.longitude,
@@ -104,8 +106,7 @@ export class MapComponent implements OnInit, AfterViewInit {
         if (event.target === markerItem) {
           marker.setIcon(this.homeIconActive);
           this.currentItemData = data;
-          this.modalComponent.displayForm = false;
-          this.modalComponent.openModal();
+          this.openModal();
           this.map.setCenter(event.target.getGeometry());
         } else {
           markerItem.setIcon(this.homeIcon);
@@ -114,4 +115,23 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
   }
 
+  openModal(): void {
+    this.modalComponent.openModal();
+  }
+
+  closeModal(): void {
+    this.modalComponent.closeModal();
+  }
+
+  handleModalEvent($event: any): void {
+    if ($event && $event === 'modalClosed') {
+      this.resetMarkerIcons();
+    }
+  }
+
+  resetMarkerIcons(): void {
+    this.markers.forEach((marker: any) => {
+        marker.setIcon(this.homeIcon);
+      });
+  }
 }

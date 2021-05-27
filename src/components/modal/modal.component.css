@@ -6,8 +6,13 @@
   left: calc(50% - 20em);
   width: 40em;
   background: white;
-  padding: 1rem;
+  padding: 0.7rem;
   border: 1px solid #cccccc82;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .modal-action-btn {

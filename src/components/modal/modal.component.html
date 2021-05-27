@@ -1,4 +1,7 @@
 <div class="modal">
+  <div class="modal-header">
+    <button class="icon-btn" (click)="closeModal()">X</button>
+  </div>
   <div *ngIf="!displayForm; then detailsTemplate else formTemplate">
   </div>
 </div>

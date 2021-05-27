@@ -38,6 +38,13 @@ body {
   cursor: pointer;
 }
 
+.icon-btn {
+  background-color: white;
+  border: 1px solid #9E9E9E;
+  border-radius: 50%;
+  padding: 0.3em 0.5em;
+}
+
 .open {
   display: block !important;
 }

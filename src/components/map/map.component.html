@@ -1,2 +1,2 @@
-<app-modal #modal [data]="currentItemData"></app-modal>
+<app-modal #modal [data]="currentItemData" (modalEvent)="handleModalEvent($event)"></app-modal>
 <div #map class="map"></div>
