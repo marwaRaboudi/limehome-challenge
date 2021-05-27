@@ -5,8 +5,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './modal/modal.component';
 import {ReactiveFormsModule} from '@angular/forms';
 
-
-
 @NgModule({
   declarations: [
     MapComponent,
