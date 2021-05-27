@@ -27,7 +27,7 @@
         Full Name:
       </label>
       <input formControlName="fullName" id="fullName" required type="text" class="form-input">
-      <div *ngIf="bookForm.get('fullName').hasError('required') && bookForm.get('fullName').touched" class="error-message">
+      <div *ngIf="bookForm.get('fullName')?.hasError('required') && bookForm.get('fullName')?.touched" class="error-message">
         Full Name is required
       </div>
     </div>
@@ -36,10 +36,10 @@
         Email:
       </label>
       <input formControlName="email" id="email" required type="email" class="form-input">
-      <div *ngIf="bookForm.get('email').hasError('required') && bookForm.get('email').touched" class="error-message">
+      <div *ngIf="bookForm.get('email')?.hasError('required') && bookForm.get('email')?.touched" class="error-message">
         Email is required
       </div>
-      <div *ngIf="bookForm.get('email').hasError('email')" class="error-message">
+      <div *ngIf="bookForm.get('email')?.hasError('email')" class="error-message">
         Please enter a valid address mail
       </div>
     </div>
