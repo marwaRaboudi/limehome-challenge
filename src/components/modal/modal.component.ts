@@ -13,7 +13,26 @@ export class ModalComponent implements OnInit {
   bookForm = this.fb.group({
     fullName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
+    phone: ['', [Validators.required]],
+    address: ['', [Validators.required]],
+    roomPreference: [''],
+    chekInDate: ['', [Validators.required]],
+    chekOutDate: ['', [Validators.required]],
   });
+  roomPreferences: any[] = [
+    {
+      name: 'Standard',
+      value: 'standard'
+    },
+    {
+      name: 'Deluxe',
+      value: 'deluxe'
+    },
+    {
+      name: 'Suite',
+      value: 'suite'
+    }
+  ];
 
   constructor(private fb: FormBuilder) {
   }

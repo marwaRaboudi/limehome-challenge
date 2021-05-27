@@ -1,6 +1,6 @@
 <div class="modal">
   <div class="modal-header">
-    <button class="icon-btn" (click)="closeModal()">X</button>
+    <button (click)="closeModal()" class="icon-btn">X</button>
   </div>
   <div *ngIf="!displayForm; then detailsTemplate else formTemplate">
   </div>
@@ -27,7 +27,7 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="bookForm" class="book-form">
     <div>
       <label for="fullName">
-        Full Name:
+        Full Name
       </label>
       <input class="form-input" formControlName="fullName" id="fullName" required type="text">
       <div *ngIf="bookForm.get('fullName')?.hasError('required') && bookForm.get('fullName')?.touched"
@@ -37,7 +37,7 @@
     </div>
     <div>
       <label for="email">
-        Email:
+        Email
       </label>
       <input class="form-input" formControlName="email" id="email" required type="email">
       <div *ngIf="bookForm.get('email')?.hasError('required') && bookForm.get('email')?.touched" class="error-message">
@@ -47,6 +47,60 @@
         Please enter a valid address mail
       </div>
     </div>
+    <div class="flex-row">
+      <div class="flex-basis">
+        <label for="address">
+          Address
+        </label>
+        <input class="form-input" formControlName="address" id="address" required type="text">
+        <div *ngIf="bookForm.get('address')?.hasError('required') && bookForm.get('address')?.touched"
+             class="error-message">
+          Address is required
+        </div>
+      </div>
+      <div class="flex-basis">
+        <label for="phone">
+          Phone
+        </label>
+        <input class="form-input" formControlName="phone" id="phone" required type="text">
+        <div *ngIf="bookForm.get('phone')?.hasError('required') && bookForm.get('phone')?.touched"
+             class="error-message">
+          Phone is required
+        </div>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="flex-basis">
+        <label for="chekInDate">
+          Check in date
+        </label>
+        <input class="form-input" formControlName="chekInDate" id="chekInDate" required type="date">
+        <div *ngIf="bookForm.get('chekInDate')?.hasError('required') && bookForm.get('chekInDate')?.touched"
+             class="error-message">
+          Chek in date is required
+        </div>
+      </div>
+      <div class="flex-basis">
+        <label for="chekOutDate">
+          Chek out date
+        </label>
+        <input class="form-input" formControlName="chekOutDate" id="chekOutDate" required type="date">
+        <div *ngIf="bookForm.get('chekOutDate')?.hasError('required') && bookForm.get('chekOutDate')?.touched"
+             class="error-message">
+          Chek out date is required
+        </div>
+      </div>
+    </div>
+    <div>
+      <label>
+        Room Preference
+      </label>
+      <div *ngFor="let roomPreference of roomPreferences">
+        <input [id]="roomPreference.value" [value]="roomPreference.value" formControlName="roomPreference"
+               type="radio">
+        <label [for]="roomPreference.value">{{roomPreference.name}}</label>
+      </div>
+    </div>
     <div class="form-footer">
       <button (click)="closeModal()" class="cancel-btn" type="button">Cancel</button>
       <button [disabled]="!bookForm.valid" class="success-btn" type="submit">Submit</button>
@@ -54,4 +108,4 @@
   </form>
 </ng-template>
 
-<div id="toast">Congratulations!</div>
+<div id="toast">Your booking is confirmed. Thank You!</div>
