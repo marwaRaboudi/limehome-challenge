@@ -7,8 +7,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port $PORT --host 0.0.0.0",
-    "build": "ng build --prod",
+    "start": "ng serve --port $PORT --host 0.0.0.0 --max_old_space_size=2560",
+    "build": "ng build --prod --max_old_space_size=2560",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
