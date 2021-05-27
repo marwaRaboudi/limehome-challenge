@@ -8,6 +8,9 @@
   background: white;
   padding: 0.7rem;
   border: 1px solid #cccccc82;
+  max-height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .modal-header {
@@ -165,6 +168,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .flex-basis {
@@ -175,7 +179,6 @@
   .modal {
     left: calc(50% - 7.5em);
     width: 15em;
-    padding: 0.5rem;
   }
 
   .modal-title {
@@ -196,7 +199,6 @@
   .modal {
     left: calc(50% - 15em);
     width: 30em;
-    padding: 0.7rem;
   }
 
   .modal-title {
@@ -217,7 +219,6 @@
   .modal {
     left: calc(50% - 17.5em);
     width: 35em;
-    padding: 0.7rem;
   }
 
   .modal-title {
