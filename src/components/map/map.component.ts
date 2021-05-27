@@ -18,11 +18,11 @@ export class MapComponent implements OnInit, AfterViewInit {
   public modalComponent!: any;
   markers: any[] = [];
   currentItemData: any = {};
+  homeIcon = new H.map.Icon('../../assets/images/home-icon.svg');
+  homeIconActive = new H.map.Icon('../../assets/images/home-icon-active.svg');
   private platform: any;
   private map: any;
   private ui: any;
-  homeIcon = new H.map.Icon('../../assets/images/home-icon.svg');
-  homeIconActive = new H.map.Icon('../../assets/images/home-icon-active.svg');
 
   constructor() {
     this.platform = new H.service.Platform({
@@ -131,7 +131,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   resetMarkerIcons(): void {
     this.markers.forEach((marker: any) => {
-        marker.setIcon(this.homeIcon);
-      });
+      marker.setIcon(this.homeIcon);
+    });
   }
 }

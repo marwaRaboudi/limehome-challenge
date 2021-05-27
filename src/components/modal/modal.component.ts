@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -14,7 +14,9 @@ export class ModalComponent implements OnInit {
     fullName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
   });
-  constructor(private fb: FormBuilder) { }
+
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
   }
@@ -51,7 +53,9 @@ export class ModalComponent implements OnInit {
     const toast = document.getElementById('toast');
     if (toast) {
       toast.className = 'show';
-      setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 3000);
+      setTimeout(() => {
+        toast.className = toast.className.replace('show', '');
+      }, 3000);
     }
   }
 
