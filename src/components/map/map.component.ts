@@ -82,8 +82,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   getPlaces(): void {
-    this.markers = [];
-    this.map.removeObjects(this.map.getObjects());
+    this.removeMarkers();
     const places = this.platform.getPlacesService();
     places.search({
       at: this.latitude + ',' + this.longitude,
@@ -133,5 +132,12 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.markers.forEach((marker: any) => {
       marker.setIcon(this.homeIcon);
     });
+  }
+
+  removeMarkers(): void {
+    this.markers.forEach((marker: any) => {
+      this.map.removeObject(marker);
+    });
+    this.markers = [];
   }
 }
