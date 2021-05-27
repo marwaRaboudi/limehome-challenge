@@ -1,4 +1,7 @@
 <div class="modal">
+  <div class="modal-header">
+    <button class="icon-btn" (click)="closeModal()">X</button>
+  </div>
   <div *ngIf="!displayForm; then detailsTemplate else formTemplate">
   </div>
 </div>
@@ -16,7 +19,7 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button (click)="showForm()" class="modal-action-btn" type="button">BOOK</button>
+    <button (click)="showForm()" class="success-btn modal-action-btn" type="button">BOOK</button>
   </div>
 </ng-template>
 
@@ -26,8 +29,9 @@
       <label for="fullName">
         Full Name:
       </label>
-      <input formControlName="fullName" id="fullName" required type="text" class="form-input">
-      <div *ngIf="bookForm.get('fullName')?.hasError('required') && bookForm.get('fullName')?.touched" class="error-message">
+      <input class="form-input" formControlName="fullName" id="fullName" required type="text">
+      <div *ngIf="bookForm.get('fullName')?.hasError('required') && bookForm.get('fullName')?.touched"
+           class="error-message">
         Full Name is required
       </div>
     </div>
@@ -35,7 +39,7 @@
       <label for="email">
         Email:
       </label>
-      <input formControlName="email" id="email" required type="email" class="form-input">
+      <input class="form-input" formControlName="email" id="email" required type="email">
       <div *ngIf="bookForm.get('email')?.hasError('required') && bookForm.get('email')?.touched" class="error-message">
         Email is required
       </div>
@@ -44,10 +48,10 @@
       </div>
     </div>
     <div class="form-footer">
-      <button type="button" class="cancel-btn" (click)="closeModal()">Cancel</button>
-      <button [disabled]="!bookForm.valid" type="submit" class="submit-btn">Submit</button>
+      <button (click)="closeModal()" class="cancel-btn" type="button">Cancel</button>
+      <button [disabled]="!bookForm.valid" class="success-btn" type="submit">Submit</button>
     </div>
   </form>
 </ng-template>
 
-<div id="toast">Congratulations! </div>
+<div id="toast">Congratulations!</div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -8,7 +8,8 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class ModalComponent implements OnInit {
   @Input() data: any;
-  displayForm!: boolean;
+  @Output() modalEvent = new EventEmitter<string>();
+  displayForm = false;
   bookForm = this.fb.group({
     fullName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
@@ -19,6 +20,7 @@ export class ModalComponent implements OnInit {
   }
 
   openModal(): void {
+    this.displayForm = false;
     const modal = document.querySelector('.modal');
     if (modal) {
       modal.classList.add('open');
@@ -27,10 +29,12 @@ export class ModalComponent implements OnInit {
 
   closeModal(): void {
     this.bookForm.reset();
+    this.displayForm = false;
     const modal = document.querySelector('.modal');
     if (modal) {
       modal.classList.remove('open');
     }
+    this.modalEvent.emit('modalClosed');
   }
 
   showForm(): void {
