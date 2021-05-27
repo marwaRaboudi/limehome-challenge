@@ -21,11 +21,13 @@ body {
   font: inherit;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  outline: none;
 }
 
 .success-btn:disabled {
   background-color: #f7941d9e;
   border: 1px solid #f7941d9e;
+  outline: none;
 }
 
 .cancel-btn {
@@ -36,6 +38,7 @@ body {
   font: inherit;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  outline: none;
 }
 
 .icon-btn {
@@ -43,6 +46,11 @@ body {
   border: 1px solid #9E9E9E;
   border-radius: 50%;
   padding: 0.3em 0.5em;
+  outline: none;
+}
+
+.icon-btn:hover {
+  cursor: pointer;
 }
 
 .open {
