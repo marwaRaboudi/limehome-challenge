@@ -42,8 +42,14 @@
   font-size: 1.3rem;
 }
 
-.modal-container img {
+.img-container {
+  height: 200px;
+}
+
+.img-container img {
   width: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 
 .price {
@@ -133,13 +139,11 @@
 
 
 @media (min-width: 320px) {
-  .modal-container {
-    flex-direction: column;
-  }
 
   .modal {
     left: calc(50% - 7.5em);
     width: 15em;
+    padding: 0.3rem;
   }
 
   .modal-title {
@@ -156,13 +160,11 @@
 }
 
 @media (min-width: 640px) {
-  .modal-container {
-    flex-direction: row;
-  }
 
   .modal {
     left: calc(50% - 15em);
     width: 30em;
+    padding: 0.7rem;
   }
 
   .modal-title {
@@ -179,13 +181,11 @@
 }
 
 @media (min-width: 768px) {
-  .modal-container {
-    flex-direction: row;
-  }
 
   .modal {
     left: calc(50% - 17.5em);
     width: 35em;
+    padding: 0.7rem;
   }
 
   .modal-title {
